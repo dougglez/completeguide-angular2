@@ -1,3 +1,17 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-10">
+            <h1>Hello World!</h1>
+            <hr>
+            <!-- this can be wrapped in a div to give the whole div styling -->
+            <div routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+              <a [routerLink]="['']" [queryParams]="{analytics: 500}">Home</a>
+            </div>
+              <!-- <a [routerLink]="['']" [queryParams]="{analytics: 500}" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a> -->
+              <input type="text" #id (input)="0">
+              <a [routerLink]="['user', id.value]" [preserveQueryParams]="true" routerLinkActive="active">User</a>
+            <hr>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
